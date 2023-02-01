@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script> 
+    // Show login page by default
+document.querySelector(".login-container").style.display = "block";
+
+// Event listener for sign up button
+document.querySelector(".signup-btn").addEventListener("click", function() {
+  document.querySelector(".login-container").style.display = "none";
+  document.querySelector(".signup-container").style.display = "block";
+});
+
+// Event listener for login button
+document.querySelector(".login-btn").addEventListener("click", function() {
+  document.querySelector(".signup-container").style.display = "none";
+  document.querySelector(".login-container").style.display = "block";
+});
+
+    </script>
+    <style>
+        .login-container, .signup-container {
+  width: 400px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+input[type="text"], input[type="email"], input[type="password"] {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 20px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+
+button[type="submit"] {
+  padding: 10px 20px;
+  border-radius: 5px;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+.login-container, .signup-container {
+  width: 400px;
+  margin: 100px auto;
+  text-align: center;
+  background-color: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+body {
+  background-color: lightgreen;
+}
+
+    </style>
+</head>
+<body>
+    <!-- Buttons to switch between sign up and login pages -->
+<div class="buttons-container">
+    <button class="signup-btn">Sign Up</button>
+    <button class="login-btn">Login</button>
+  </div>
+  
+  <!-- Login page -->
+  <div class="login-container" style="display: none;">
+    <h1>Login</h1>
+    <form action="#">
+      <input type="text" placeholder="Username">
+      <input type="password" placeholder="Password">
+      <button type="submit">Submit</button>
+    </form>
+  </div>
+  
+  <!-- Sign up page -->
+  <div class="signup-container" style="display: none;">
+    <h1>Sign Up</h1>
+    <form action="#">
+      <input type="email" placeholder="Email">
+      <input type="text" placeholder="Username">
+      <input type="password" placeholder="Password">
+      <button type="submit">Submit</button>
+    </form>
+  </div>
+  
+    
+</body>
+</html>
