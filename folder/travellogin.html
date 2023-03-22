@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+   
+      
+      
+    <style>
+    body {
+  background-image: url('sec.jpg');
+}
+ 
+    .login-container, .signup-container {
+  width: 400px;
+  margin: 0 auto;
+  text-align: center;
+}
+.login-container, .signup-container {
+  width: 400px;
+  margin: 100px auto;
+  text-align: center;
+  background-color: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+
+input[type="text"], input[type="email"], input[type="password"] {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 20px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+
+button[type="submit"] {
+  padding: 10px 20px;
+  border-radius: 5px;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+button:hover{
+  background-color: black;
+  
+}
+
+</style>
+
+</head>
+<body>
+  <script>  
+      function validateform(){  
+      var name=document.myform.name.value;  
+      var password=document.myform.password.value;
+      var otp=document.myform.otp.value; 
+      var x=document.myform.email.value; 
+      var atposition=x.indexOf("@");  
+      var dotposition=x.lastIndexOf(".");    
+        
+      if (name==null || name==""){  
+        alert("Name can't be blank");  
+        return false;  
+      }else if(password.length<6){  
+        alert("Password must be at least 6 characters long.");  
+        return false;  
+        }else if(otp.length!=6){  
+        alert("otp must be 6 characters long.");  
+        return false;  
+        }
+      else if (atposition<1 || dotposition<atposition+2 || dotposition+2>=x.length){  
+        alert("Please enter a valid e-mail address");  
+        return false;  
+        }
+       
+      } 
+      </script> 
+    <!-- Login page -->
+<div class="login-container">
+    <h1>Login Page</h1>
+    <form name="myform">
+      <input type="email" name="email" placeholder="Email">
+      <input type="text" name="name" placeholder="Username">
+      <input type="password" name="password" placeholder="Password">
+      <input type="text" name="otp" placeholder="OTP">
+
+     
+      <button type="submit" onclick="validateform()" >Sign Up/Login</button>
+
+    </form>
+  </div>
+  
+  <!-- Sign up page -->
+
+  
+    
+</body>
+</html>
